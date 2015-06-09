@@ -14,16 +14,8 @@ import sys
 import urllib2
 import urllib
 import requests
-# make a list for top 100 shares($) tweets for last 15min
-# Go to http://apps.twitter.com and create an app.
-# The consumer key and secret will be generated for you after
-#consumer_key="78VWJGi4vahhe7uFR5iFRbi99"
-#consumer_secret="ZWOZxVr1u7NKJQqYsJmxOO15UZ2icwVNJ0VItLqLGFPotrlpnl"
 
-# After the step above, you will be redirected to your app's page.
-# Create an access token under the the "Your access token" section
-#access_token="2952137164-zm2pv0DBWxMj4O0foTS6HCbSafsZnAjywk7MB1O"
-#access_token_secret="CwfBd7CjyxrP2rxUMZYSC2VqzZQXMwU3aaYOYfJZng9uS"
+
 tweet_hash = {}
 tweet_cash = {} 
 ct_updater = 0
