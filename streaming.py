@@ -41,7 +41,7 @@ def config():
         savepath = str(config.get("Config","savepath"))
         maxsize = str(config.get("Config","maxsize"))
         maxsize = int(maxsize) * 1073741824 #convert MB to bytes
-        hashtrack = str(config.get("Config","hashtrack")
+        hashtrack = str(config.get("Config","track"))
         #check if savefile directory exists and creates it if not
         try: 
             os.makedirs(savepath)
@@ -56,8 +56,7 @@ def config():
     
 def f():
     #this function gets executed every 60 seconds
-    #save the tweet_cash data every 60 seconds
-    #get the filename that you save to (size limit included)
+    #sets the filename that you save to (size limit included)
     try:
         global date
         global savefile
@@ -75,7 +74,7 @@ def f():
             savefile = str('%s%s-%s_part%d.txt'%(savepath, date, machine, partcount))
 
 
-
+##Testing communication with Flask webserver. Not implemented
 ##        url = 'http://127.0.0.1:5000/base'
 ##        data = urllib.urlencode([('query', tweet_cash)])
 ##        #print(data)
@@ -109,14 +108,15 @@ class StdOutListener(StreamListener):
             global tweet_cash
             global savefile
             # print(data)
-            # Save JSON data to txt
+            # Save JSON data to txt. Could implement buffer to reduce IO operations
 
             with open(savefile,"a+") as text:
                 text.write(data)
             text.close()
-            #Counts the number of cashtags and hashtags
-            #Stores in dictionaries tweet_hash and tweet_cash
-            
+##Code to count the number of cashtags and hashtags
+##Stores in dictionaries tweet_hash and tweet_cash
+##Code is working but not used
+##
 ##            line = json.loads(data)
 ##            if "entities" in line.keys():                    # Check whether entities tags present
 ##              hashtags = line["entities"]["hashtags"]        #  - if present then extract the hashtags
@@ -155,9 +155,7 @@ class StdOutListener(StreamListener):
         print >> sys.stderr, 'Encountered error with status code:', status
         return True
         
-    def on_status(self, status):
-        print(status.text)
-        
+
     def on_timeout(self):
         print >> sys.stderr, 'Timeout...'
         time.sleep(10)
