@@ -9,7 +9,7 @@ To Install:
     - Enter your 4 api keys: https://apps.twitter.com -> Keys and Access Tokens
     - Enter a machine name, this will be included in the filename.
     - Enter a save path, curently saves to (location of script)/data
-    - Enter the max filesize in MB. This way you wont accidentally have 20Gb files. If you do not want to use this, set it to a very high value.
+    - Enter the max filesize in MB. This way you wont accidentally have huge files. If you do not want to use this, set it to a very high value.
     - Enter the hashtags you wish to follow
 
 Make sure you set write permission on the save path.
